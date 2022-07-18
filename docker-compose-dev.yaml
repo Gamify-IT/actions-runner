@@ -1,0 +1,16 @@
+version: "3.7"
+
+
+
+services:
+
+  runner-1:
+    container_name: ${name1}
+    build: .
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - url=${url}
+      - token=${token1}
+      - name=${name1}

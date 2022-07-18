@@ -1,0 +1,35 @@
+version: "3.7"
+
+services:
+
+  runner-1:
+    container_name: runner-1
+    image: ghcr.io/gamify-it/actions-runner:latest
+    restart: always
+    environment:
+      - url=${url}
+      - token=${token1}
+  
+  runner-2:
+    container_name: runner-2
+    image: ghcr.io/gamify-it/actions-runner:latest
+    restart: always
+    environment:
+      - url=${url}
+      - token=${token2}
+
+  runner-3:
+    container_name: runner-3
+    image: ghcr.io/gamify-it/actions-runner:latest
+    restart: always
+    environment:
+      - url=${url}
+      - token=${token3}
+
+  runner-4:
+    container_name: runner-4
+    image: ghcr.io/gamify-it/actions-runner:latest
+    restart: always
+    environment:
+      - url=${url}
+      - token=${token4}
