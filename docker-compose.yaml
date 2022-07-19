@@ -9,6 +9,9 @@ services:
     environment:
       - url=${url}
       - token=${token1}
+      - name=${name1}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
   
   runner-2:
     container_name: runner-2
@@ -17,6 +20,9 @@ services:
     environment:
       - url=${url}
       - token=${token2}
+      - name=${name2}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
 
   runner-3:
     container_name: runner-3
@@ -25,6 +31,9 @@ services:
     environment:
       - url=${url}
       - token=${token3}
+      - name=${name3}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
 
   runner-4:
     container_name: runner-4
@@ -33,3 +42,6 @@ services:
     environment:
       - url=${url}
       - token=${token4}
+      - name=${name4}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
