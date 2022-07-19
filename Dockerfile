@@ -1,14 +1,15 @@
-FROM ubuntu:latest
-
-
+FROM ubuntu
 
 WORKDIR /actions-runner
 
 RUN apt update -y -q
-RUN apt install -y -q wget 
+RUN apt install -y -q wget gpg lsb-release
 
 # install packages required by some actions
-RUN apt install -y -q docker golang maven git git-lfs npm net-tools
+RUN wget --quiet -O - https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+RUN echo "deb [signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list
+RUN apt update
+RUN apt install -y -q docker-ce golang openjdk-17-jdk maven git git-lfs npm net-tools
 
 ARG runnerVersion="2.294.0"
 
