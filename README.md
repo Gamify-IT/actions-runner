@@ -11,6 +11,18 @@ Or configure the docker-compose by add as many runners asyou want into the `dock
 ```sh
 docker-compose up
 ```
+An example `.env` file has the following content:
+```sh
+url=https://github.com/Gamify-IT
+token1=XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+name1=runner-1
+token2=XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+name2=runner-2
+token3=XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+name3=runner-3
+token4=XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+name4=runner-4
+```
 
 ## Build yourself
 
