@@ -9,4 +9,5 @@ if [ ! -f "configured" ]; then
     touch "configured"
 fi
 
+dockerd &
 ./run.sh

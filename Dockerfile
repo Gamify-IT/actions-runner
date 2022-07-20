@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM debian
 
 WORKDIR /actions-runner
 
@@ -7,9 +7,11 @@ RUN apt install -y -q wget gpg lsb-release
 
 # install packages required by some actions
 RUN wget --quiet -O - https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-RUN echo "deb [signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list
+RUN echo "deb [signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" \
+    > /etc/apt/sources.list.d/docker.list
 RUN apt update
-RUN apt install -y -q docker-ce golang openjdk-17-jdk maven git git-lfs npm net-tools
+RUN apt install -y -q docker-ce golang openjdk-17-jdk maven git git-lfs npm net-tools curl unzip \
+    ca-certificates software-properties-common build-essential openssh-client
 
 ARG runnerVersion="2.294.0"
 

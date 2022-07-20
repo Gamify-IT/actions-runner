@@ -8,10 +8,8 @@ services:
     restart: always
     environment:
       - url=${url}
-      - token=${token1}
+      - token${token}
       - name=${name1}
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
 
   runner-2:
     container_name: runner-2
@@ -19,10 +17,8 @@ services:
     restart: always
     environment:
       - url=${url}
-      - token=${token2}
+      - token=${token}
       - name=${name2}
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
 
   runner-3:
     container_name: runner-3
@@ -30,10 +26,8 @@ services:
     restart: always
     environment:
       - url=${url}
-      - token=${token3}
+      - token=${token}
       - name=${name3}
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
 
   runner-4:
     container_name: runner-4
@@ -41,7 +35,5 @@ services:
     restart: always
     environment:
       - url=${url}
-      - token=${token4}
+      - token=${token}
       - name=${name4}
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
