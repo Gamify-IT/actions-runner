@@ -11,8 +11,10 @@ services:
       - url=${url}
       - token=${token}
       - name=${name1}
+      - workdir=/actionsRunnerWorkdir/${name1}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - /actionsRunnerWorkdir/${name1}:/actionsRunnerWorkdir/${name1}
 
   runner-2:
     container_name: runner-2
@@ -23,6 +25,10 @@ services:
       - url=${url}
       - token=${token}
       - name=${name2}
+      - workdir=/actionsRunnerWorkdir/${name2}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /actionsRunnerWorkdir/${name2}:/actionsRunnerWorkdir/${name2}
 
   runner-3:
     container_name: runner-3
@@ -33,6 +39,10 @@ services:
       - url=${url}
       - token=${token}
       - name=${name3}
+      - workdir=/actionsRunnerWorkdir/${name3}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /actionsRunnerWorkdir/${name3}:/actionsRunnerWorkdir/${name3}
 
   runner-4:
     container_name: runner-4
@@ -43,3 +53,7 @@ services:
       - url=${url}
       - token=${token}
       - name=${name4}
+      - workdir=/actionsRunnerWorkdir/${name4}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /actionsRunnerWorkdir/${name4}:/actionsRunnerWorkdir/${name4}

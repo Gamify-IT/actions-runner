@@ -9,8 +9,8 @@ services:
     environment:
       - url=${url}
       - token=${token}
-      - name=${name}
-      - workdir=/actionsRunnerWorkdir/${name}
+      - name=${name1}
+      - workdir=/actionsRunnerWorkdir/${name1}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /actionsRunnerWorkdir/${name}:/actionsRunnerWorkdir/${name}
+      - /actionsRunnerWorkdir/${name1}:/actionsRunnerWorkdir/${name1}
