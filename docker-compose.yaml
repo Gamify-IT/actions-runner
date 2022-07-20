@@ -11,6 +11,8 @@ services:
       - url=${url}
       - token=${token}
       - name=${name1}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
 
   runner-2:
     container_name: runner-2
