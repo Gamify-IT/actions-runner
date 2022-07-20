@@ -6,15 +6,17 @@ services:
     container_name: runner-1
     image: ghcr.io/gamify-it/actions-runner:latest
     restart: always
+    privileged: true
     environment:
       - url=${url}
-      - token${token}
+      - token=${token}
       - name=${name1}
 
   runner-2:
     container_name: runner-2
     image: ghcr.io/gamify-it/actions-runner:latest
     restart: always
+    privileged: true
     environment:
       - url=${url}
       - token=${token}
@@ -24,6 +26,7 @@ services:
     container_name: runner-3
     image: ghcr.io/gamify-it/actions-runner:latest
     restart: always
+    privileged: true
     environment:
       - url=${url}
       - token=${token}
@@ -33,6 +36,7 @@ services:
     container_name: runner-4
     image: ghcr.io/gamify-it/actions-runner:latest
     restart: always
+    privileged: true
     environment:
       - url=${url}
       - token=${token}
