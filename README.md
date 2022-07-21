@@ -4,11 +4,6 @@ This repo contains a Dockerfile and a docker-compose setup for a multithreaded G
 
 ## Use
 
-sudo systemctl stop docker
-sudo dockerd --storage-opt overlay2.size=20G
-sudo rm -rf /var/lib/docker
-sudo systemctl start docker
-
 To run one or more runner with docker compose add as many runners as you want into the `docker-compose.yaml` and fill in the credentials into the `.env` file. Then you can run it with
 ```sh
 docker-compose up
