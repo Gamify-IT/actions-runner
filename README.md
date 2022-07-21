@@ -43,11 +43,4 @@ name4=runner-4
 
 ## Build yourself
 
-Build the Docker-Container
-```sh
-docker build -t github-actions-runner .
-```
-And run it with
-```sh
-docker run -d --env "url=${url}" "token=${token}" "name=${name}" --volume "/var/run/docker.sock:/var/run/docker.sock" --name github-actions-runner github-actions-runner
-```
+Exchange `image: ghcr.io/gamify-it/actions-runner:latest` in the `docker-compose.yaml` with `build .` or use the `docker-compose-dev.yaml`.
