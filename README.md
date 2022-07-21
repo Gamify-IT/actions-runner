@@ -4,11 +4,6 @@ This repo contains a Dockerfile and a docker-compose setup for a multithreaded G
 
 ## Use
 
-sudo systemctl stop docker
-sudo dockerd --storage-opt overlay2.size=20G
-sudo rm -rf /var/lib/docker
-sudo systemctl start docker
-
 To run one or more runner with docker compose add as many runners as you want into the `docker-compose.yaml` and fill in the credentials into the `.env` file. Then you can run it with
 ```sh
 docker-compose up
@@ -43,11 +38,4 @@ name4=runner-4
 
 ## Build yourself
 
-Build the Docker-Container
-```sh
-docker build -t github-actions-runner .
-```
-And run it with
-```sh
-docker run -d --env "url=${url}" "token=${token}" "name=${name}" --volume "/var/run/docker.sock:/var/run/docker.sock" --name github-actions-runner github-actions-runner
-```
+Exchange `image: ghcr.io/gamify-it/actions-runner:latest` in the `docker-compose.yaml` with `build .` or use the `docker-compose-dev.yaml`.
