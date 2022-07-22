@@ -12,6 +12,8 @@ services:
       - token=${token}
       - name=${name1}
       - workdir=/actionsRunnerWorkdir/${name1}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /actionsRunnerWorkdir/${name1}:/actionsRunnerWorkdir/${name1}
@@ -26,6 +28,8 @@ services:
       - token=${token}
       - name=${name2}
       - workdir=/actionsRunnerWorkdir/${name2}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /actionsRunnerWorkdir/${name2}:/actionsRunnerWorkdir/${name2}
@@ -40,6 +44,8 @@ services:
       - token=${token}
       - name=${name3}
       - workdir=/actionsRunnerWorkdir/${name3}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /actionsRunnerWorkdir/${name3}:/actionsRunnerWorkdir/${name3}
@@ -54,6 +60,8 @@ services:
       - token=${token}
       - name=${name4}
       - workdir=/actionsRunnerWorkdir/${name4}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /actionsRunnerWorkdir/${name4}:/actionsRunnerWorkdir/${name4}
