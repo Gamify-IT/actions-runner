@@ -20,11 +20,14 @@ runner:
       - token=${token}
       - name=${name}
       - workdir=/actionsRunnerWorkdir/${name}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /actionsRunnerWorkdir/${name}:/actionsRunnerWorkdir/${name}
 ```
-To work properly the runner needs a volume which has the same path on the host and the container.
+To work properly the runner needs a volume which has the same path on the host and the container. \
+The host entry sets a possiblility to reach the host with the url `host.docker.internal` to for example access a startet docker container.
 
 An example `.env` file has the following content:
 ```sh
