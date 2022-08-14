@@ -12,9 +12,8 @@ RUN echo "deb [signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https:/
 RUN apt update
 RUN apt install -y -q docker-ce golang openjdk-17-jdk maven git git-lfs npm net-tools curl unzip \
     ca-certificates software-properties-common build-essential openssh-client
-RUN go version
 
-ARG runnerVersion="2.294.0"
+ARG runnerVersion="2.295.0"
 
 RUN wget --quiet -O actions-runner.tar.gz https://github.com/actions/runner/releases/download/v${runnerVersion}/actions-runner-linux-x64-${runnerVersion}.tar.gz
 RUN tar -xzf actions-runner.tar.gz
