@@ -39,6 +39,11 @@ name3=runner-3
 name4=runner-4
 ```
 
+To clean up the docker files on a monthly basis so that the runner doesn't run out of space, you can add the following line to your crontab:
+```
+0 2 1 * * root docker system prune --force --all > /dev/null
+``` 
+
 ## Build yourself
 
 Exchange `image: ghcr.io/gamify-it/actions-runner:latest` in the `docker-compose.yaml` with `build .` or use the `docker-compose-dev.yaml`.
